@@ -1,4 +1,5 @@
 import pandas as pd
+import logging, os
 #from pprint import pprint
 
 #results = []
@@ -7,9 +8,29 @@ import pandas as pd
 #        results.append(row)
 #with pandas to pull stats if you want by higest nlargest lowest nsmallest
 
-#class Chiron():
-    #def BroHtttpParse(inFile):
-df = pd.read_csv( 'benign1files.log',sep='\t', skiprows=[7], header=6)
+log = logging.getLogger(__name__)
+
+#class bro_ingestion:
+
+"""Parse bro related data
+
+  Attributes:
+  directory_to_parse: path to bro data 
+  move_files_after_parsing: set to false if we want to retain files after parsing
+  delog: to remove files in set directory
+  inFile: to read data in log"""
+
+    #def __init__(self, directory_to_parse, move_files_after_parsing = true):
+#self.directory = directory_to_parse
+#self.flag = move_files_after_parsing
+
+    #def move_data(delog):
+#excute an os command to read all files in directory and delete
+#del = delog
+#os.system('rm '+del)
+
+    #def bro_parse(inFile):
+df = pd.read_csv( inFile ,sep='\t', skiprows=[7], header=6)
 df_modified = df[df.columns[:-1]]
 df_modified.columns = df.columns[1:]
 tx_host = df_modified.groupby('tx_hosts')['ts'].count().sort_values().nlargest(25)
@@ -22,16 +43,52 @@ rxsumvalues = df_modified.groupby('rx_hosts')['seen_bytes'].sum().sort_values()
 rxuniquevalues = df_modified.groupby('rx_hosts')['mime_type'].nunique().sort_values()
 txrx_sb = df_modified.groupby(['tx_hosts', 'rx_hosts'])['seen_bytes'].sum().sort_values()
 
-    #def P0fParse(inFile):
-df2 = pd.read_csv( 'p0f.txt',sep='|',header=0, engine='python')
+#class p0f_ingestion:
+"""Parse p0f related data
+
+  Attributes:
+  directory_to_parse: path to p0f data 
+  move_files_after_parsing: set to false if we want to retain files after parsing
+  delog: to remove files in set directory
+  inFile: to read data in log"""
+
+    #def __init__(self, directory_to_parse, move_files_after_parsing = true):
+#self.directory = directory_to_parse
+#self.flag = move_files_after_parsing
+
+    #def move_data(delog):
+#excute an os command to read all files in directory and delete
+#del = delog
+#os.system('rm '+del)
+
+    #def p0f_parse(inFile):
+df2 = pd.read_csv( inFile,sep='|',header=0, engine='python')
 df2.columns = ['time','client_ip','server_ip','d','connection','mtu','g','raw_ip']
 df2['client_ip'] = df2['client_ip'].map(lambda x: str(x)[4:])
 df2['server_ip'] = df2['server_ip'].map(lambda x: str(x)[4:])
 df2['mtu'] = df2['mtu'].map(lambda x:  x.lstrip('raw_mtu=langEnglishnonefreqdistHz').rstrip('=Hz'))
 df2['time'] = df2['time'].map(lambda x:  x.lstrip('').rstrip('mod=mtu,cli=mod=syn+ackmod=uptimemod=httpreqmod= httpmod=host chang'))
 
-    #def NMapParse(inFile):
-df3 = pd.read_csv('nmap.tsv', delimiter='\t',)
+#class nmap_ingestion:
+"""Parse nmap related data
+
+  Attributes:
+  directory_to_parse: path to nmap data 
+  move_files_after_parsing: set to false if we want to retain files after parsing
+  delog: to remove files in set directory
+  inFile: to read data in log"""
+
+    #def __init__(self, directory_to_parse, move_files_after_parsing = true):
+#self.directory = directory_to_parse
+#self.flag = move_files_after_parsing
+
+    #def move_data(delog):
+#excute an os command to read all files in directory and delete
+#del = delog
+#os.system('rm '+del)
+
+    #def nmap_parse(inFile):
+df3 = pd.read_csv( inFile, delimiter='\t',)
 df3.columns = ['host+fp','port']
 df3['host+fp'] = df3['host+fp'].map(lambda x:  x.lstrip('Host:').rstrip(''))
 df3['port'] = df3['port'].map(lambda x:  x.lstrip('Ports:').rstrip(''))
