@@ -2,6 +2,8 @@ import pandas as pd
 import logging, os
 #from pprint import pprint
 
+log = logging.getLogger(__name__)
+
 class p0f_ingestion:
 """Parse p0f related data
 

@@ -2,6 +2,8 @@ import pandas as pd
 import logging, os
 #from pprint import pprint
 
+log = logging.getLogger(__name__)
+
 class nmap_ingestion:
 """Parse nmap related data
 
