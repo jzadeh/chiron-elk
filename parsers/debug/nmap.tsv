@@ -1,0 +1,13 @@
+Host: 192.168.1.1 (Wireless_Broadband_Router.home)	Ports: 23/open/tcp//telnet///, 80/open/tcp//http///, 443/open/tcp//https///, 992/open/tcp//telnets///, 4567/open/tcp//tram///, 8080/open/tcp//http-proxy///, 8443/open/tcp//https-alt///
+Host: 192.168.1.3 (RBS50.home)	Ports: 80/open/tcp//http///, 443/open/tcp//https///, 631/open/tcp//ipp///, 20005/open/tcp//btx///, 49152/open/tcp//unknown///
+Host: 192.168.1.9 (WDMyCloudEX4.home)	Ports: 80/open/tcp//http///, 139/open/tcp//netbios-ssn///, 443/open/tcp//https///, 445/open/tcp//microsoft-ds///, 548/open/tcp//afp///, 3306/open/tcp//mysql///, 3689/open/tcp//rendezvous///, 8181/open/tcp//intermapper///, 9000/open/tcp//cslistener///, 49152/open/tcp//unknown///
+Host: 192.168.1.14 ()	Ports: 22/filtered/tcp//ssh///, 80/open/tcp//http///, 554/open/tcp//rtsp///, 8000/open/tcp//http-alt///, 8200/open/tcp//trivnet1///
+Host: 192.168.1.15 ()	Ports: 22/filtered/tcp//ssh///, 80/open/tcp//http///, 554/open/tcp//rtsp///, 8000/open/tcp//http-alt///, 8200/open/tcp//trivnet1///
+Host: 192.168.1.21 (DESKTOP-6HKLO8I.home)	Ports: 80/open/tcp//http///, 443/open/tcp//https///
+Host: 192.168.1.36 (RBR50.home)	Ports: 53/open/tcp//domain///, 80/open/tcp//http///, 443/open/tcp//https///, 631/open/tcp//ipp///, 5555/open/tcp//freeciv///, 20005/open/tcp//btx///, 49152/open/tcp//unknown///
+Host: 192.168.1.38 (new-host-5.home)	Ports: 5001/open/tcp//commplex-link///
+Host: 192.168.1.64 ()	Ports: 22/open/tcp//ssh///, 80/open/tcp//http///, 554/open/tcp//rtsp///, 8000/open/tcp//http-alt///, 8200/open/tcp//trivnet1///, 49152/open/tcp//unknown///
+Host: 192.168.1.101 (IP-STB2.home)	Ports: 8082/open/tcp//blackice-alerts///
+Host: 192.168.1.102 (IP-STB1.home)	Ports: 8082/open/tcp//blackice-alerts///
+Host: 192.168.1.107 (IP-STB4.home)	Ports: 8082/open/tcp//blackice-alerts///
+Host: 192.168.1.254 ()	Ports: 80/open/tcp//http///, 554/open/tcp//rtsp///, 9010/open/tcp//sdr///
