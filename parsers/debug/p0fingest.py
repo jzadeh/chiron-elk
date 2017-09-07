@@ -1,6 +1,5 @@
 import pandas as pd
 import logging, os
-import ipaddress
 #from pprint import pprint
 
 log = logging.getLogger(__name__)
@@ -31,12 +30,6 @@ class p0f_ingestion:
         df2['time'] = df2['time'].map(lambda x:  x.lstrip('').rstrip('mod=mtu,cli=mod=syn+ackmod=uptimemod=httpreqmod= httpmod=host chang'))
         df2_checkpub = df2['client_ip'].apply(lambda x: ipaddress.ip_address(x).is_global)
         df2_checkpriv = df2['client_ip'].apply(lambda x: ipaddress.ip_address(x).is_private)
-        df2['cip'] = df2['client_ip'].apply(lambda x: x.split('/')[0])
-        df2['sip'] = df2['server_ip'].apply(lambda x: x.split('/')[0])
-        # df2_cipcheckpub = df2['cip'].apply(lambda x: ipaddress.ip_address(x).is_global)
-        # df2_cipcheckpriv = df2['cip'].apply(lambda x: ipaddress.ip_address(x).is_private)
-        # df2_sipcheckpub = df2['sip'].apply(lambda x: ipaddress.ip_address(x).is_global)
-        # df2_sipcheckpriv = df2['sip'].apply(lambda x: ipaddress.ip_address(x).is_private)
         return (df2)
     #def logwrite():
         #df2 = df2.to_csv('p0f.csv', index=None, encoding='utf-8')
