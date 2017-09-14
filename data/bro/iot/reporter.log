@@ -1,0 +1,9 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	reporter
+#open	2017-09-07-09-35-34
+#fields	ts	level	message	location
+#types	time	enum	string	string
+1504791334.980183	Reporter::WARNING	Your interface is likely receiving invalid UDP checksums, most likely from NIC checksum offloading.  By default, packets with invalid checksums are discarded by Bro unless using the -C command-line option or toggling the 'ignore_checksums' variable.  Alternatively, disable checksum offloading by the network adapter to ensure Bro analyzes the actual checksums that are transmitted.	/usr/share/bro/base/misc/find-checksum-offloading.bro, line 54
