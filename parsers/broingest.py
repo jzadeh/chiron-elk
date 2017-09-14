@@ -1,5 +1,6 @@
 import pandas as pd
 import logging, os
+import ipaddress
 #from pprint import pprint
 
 #results = []
@@ -39,6 +40,15 @@ class bro_ingestion:
         rxsumvalues = df_modified.groupby('rx_hosts')['seen_bytes'].sum().sort_values()
         rxuniquevalues = df_modified.groupby('rx_hosts')['mime_type'].nunique().sort_values()
         txrx_sb = df_modified.groupby(['tx_hosts', 'rx_hosts'])['seen_bytes'].sum().sort_values()
-    # def logwrite(bro):
+        bro_df_modified['c_public'] = bro_df['tx_hosts'].apply(lambda x: ipaddress.ip_address(x).is_global)
+        bro_df_modified['c_private'] = bro_df['tx_hosts'].apply(lambda x: ipaddress.ip_address(x).is_private)
+    #def logwrite(bro):
         # df_modified = df_modified.to_csv('bro.csv', index=None, encoding='utf-8')
         return (df.modified)
+
+    def ip_address_public(inputsr):
+    try:
+        return ipaddress.ip_address(inputsr).is_global
+    except ValueError as err:
+        print('Error parsing IP Address:', inputsr, ' with error: ', err)
+        return False
