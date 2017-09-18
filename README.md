@@ -1,7 +1,7 @@
 # chiron-elk
 
 Slides Located
-https://docs.google.com/presentation/d/1KPANKL_GARLbt7xYcHqyEtuE3li7bPijfulj2vVEYTc/edit?usp=sharing
+https://docs.google.com/a/hackmiami.info/presentation/d/1ReyoUCfgMgQnygSR0XHuRrAQ3eUijM1q67riK1IIyHc/edit?usp=sharing
 
 VM Location
 
