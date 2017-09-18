@@ -1,5 +1,12 @@
 # chiron-elk
 
+Slides Located
+https://docs.google.com/presentation/d/1KPANKL_GARLbt7xYcHqyEtuE3li7bPijfulj2vVEYTc/edit?usp=sharing
+
+VM Location
+
+https://drive.google.com/uc?id=0B8G0yrax_wtaNzAxM2ptdUZ6anc&export=download
+
 
 ## Installing
 
