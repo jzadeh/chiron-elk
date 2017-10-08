@@ -7,6 +7,8 @@ VM Location
 
 https://drive.google.com/uc?id=0B8G0yrax_wtaNzAxM2ptdUZ6anc&export=download
 
+VM Password: ronchi
+
 
 ## Installing
 
