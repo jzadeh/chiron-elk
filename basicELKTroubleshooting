@@ -1,0 +1,56 @@
+
+ELK tends to be flaky at times, so we decided to provide you with a basic troubleshooting guide
+if you are "cable cutter" and you use internet for everything you may get indeces in excess of 5 GB per day
+This is big data at home. Chiron has features for auto maintenance and deletion of indeces and logs. However
+depending on the network traffic ELK may become overwhelmed. Below a basic troubleshooting guide. 
+
+Basic ELK troubleshooting guide
+
+ISSUE: Kibana is not available
+
+1. Check if Kibana service is running: systemctl status kibana
+2. Check if port 5601 is reachable
+
+Default Kibana logs are in syslog file /var/log/syslog
+
+ISSUE: Kibana is available, but reports "Red" status for Elasticsearch backend
+
+1. Check that Elasticsearch service is running: systemctl status elasticsearch.service
+NOTE: Elasticsearch service needs up to 3 minutes to start on boot
+
+2. Check if Elasticsearch is healthy:
+curl localhost:9200/_cluster/health?pretty
+{
+      "cluster_name" : "elasticsearch",
+      "status" : "yellow",
+      "timed_out" : false,
+      "number_of_nodes" : 1,
+      "number_of_data_nodes" : 1,
+      "active_primary_shards" : 46,
+      "active_shards" : 46,
+      "relocating_shards" : 0,
+      "initializing_shards" : 0,
+      "unassigned_shards" : 46,
+      "delayed_unassigned_shards" : 0,
+      "number_of_pending_tasks" : 0,
+      "number_of_in_flight_fetch" : 0,
+      "task_max_waiting_in_queue_millis" : 0,
+      "active_shards_percent_as_number" : 50.0
+    }
+3. Check disk space available for Elasticsearch:
+curl -sS -XGET "localhost:9200/_cat/nodes?h=d*&v"
+    disk.total disk.used disk.avail disk.used_percent
+        18.1gb     4.3gb     13.7gb             23.92
+Default Elasticsearch logs location: /var/log/elasticsearch/elasticsearch.log
+
+ISSUE: Kibana is OK, but there are no messages in Discovery or Dashboards
+
+1. Check the time period on the top right corner
+2. Make sure that Logstash is running: systemctl status logstash.service
+NOTE: Logstash needs up to 3 min to start and it may take up to 10 sec for new messages to be searchable.
+
+Logstash default logs location: /var/log/logstash/logstash-plain.log (edited)
+     
+
+Choose Files 
+Send
