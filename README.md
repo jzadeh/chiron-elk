@@ -4,7 +4,9 @@
 
 # Chiron VM Deployment Notes
 
-VM Location: https://drive.google.com/open?id=18RgqJDFomkX6ZaXauqcADAtPHjFvdBfN
+VM Location: 
+.Zip (Vmware)
+.ova
 
 VM User Name: elk
 
