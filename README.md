@@ -8,7 +8,8 @@ VM Location
 
 https://drive.google.com/open?id=18RgqJDFomkX6ZaXauqcADAtPHjFvdBfN
 
-VM Password: ronchi
+VM User Name: elk
+VM Password: Elasticsearch5
 
 The VM needs to be run with VirutalBox or VMWare.  
 
