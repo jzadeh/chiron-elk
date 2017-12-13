@@ -1,5 +1,11 @@
 # Chiron Home Based ML Intrusion Detection System
 
+CHIRON is a home analytics based on ELK stack combined with Machine Learning threat detection framework AKTAION. CHIRON parses and displays data from P0f, Nmap, and BRO IDS. CHIRON is designed for home use and will give great visibility into home internet devices (IOT, Computers, Cellphones, Tablets, etc). Once you export the .ova or extract zip, make sure you have an interfaced bridged to your network and CHIRON will do the rest. Browse to KIBANA http://chironip:5601 click on dashboard or visualizations and you should be able to get a great deal of info on whats going on at your home network. You will be surprised of how many services, ports and outbound calls to weird places home devices make. CHIRON is not designed for enterprise and its current form is not scalable, there are other things like JASK Trident that does that. CHIRON is also configured to do its tasks automatically including maintenance. We have included a basic troubleshooting guide in case ELK fails which is common unfortunately. CHIRON is integrated with AKTAION which detects exploit delivery ransomware/phishing. Aktaion will run every 4 hours against bro logs and it has a benign training data set that it compares against environment data set, once AKTAION finishes it produces files with exploit microbehaviors that can be seen in a visualizations by going into the visualization menu and selecting them. We expect to add support to the following protocols in the future
+
+bluetooth
+Zigbee
+Wifi (Via Kismet)
+
 ![Alt text](/docs/Chiron_Dashboard_V1.png?raw=true "Optional Title")
 
 # Chiron VM Deployment Notes
