@@ -17,8 +17,8 @@ Wifi (Via Kismet)
 # Chiron VM Deployment Notes
 
 VM Location: 
-.Zip (Vmware) https://drive.google.com/open?id=1gUmxoCqVVbN91rw-lBcGGo-jHEN1QF8I
-.ova https://drive.google.com/open?id=1cflEVYZ9T5bLslPuLmJg3V0mj1rXbTGY
+.Zip (Vmware) https://drive.google.com/open?id=14z5FtllSgkGng-gfRpw0A0GCyWlUnvN5
+.ova https://drive.google.com/open?id=167aQ5gTX04l4b1bngp7cIJIDnTJjbggU
 
 VM User Name: elk
 
