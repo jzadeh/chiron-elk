@@ -31,6 +31,7 @@ Notes for the OVA Image
 
 1. The VM needs to be run with VirutalBox or VMWare and the .ova is built using virutal box.
 2. After importing click on settings, then network. Make sure adapter 1 is selected and the Enable Network Adapter is checked. For the attached to option select Bridged Adapter.
+3. Be sure to check that the interface name found using ifconfig -a matches that in /etc/network/interfaces. If it does not then change the name to match in order to enable DHCP on that adapter.
 
 /usr/share/elasticsearch/ /usr/share/kibana/ /usr/share/logstash/
 
